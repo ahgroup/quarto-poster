@@ -1,0 +1,20 @@
+# Keep source/template files stable across platforms.
+.gitattributes text eol=lf
+*.md text eol=lf
+*.qmd text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.r text eol=lf
+*.typ text eol=lf
+*.toml text eol=lf
+*.svg text eol=lf
+*.css text eol=lf
+
+# Binary assets
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.pdf binary
+*.docx binary
+*.rds binary
+*.xlsx binary

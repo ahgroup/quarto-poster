@@ -1,0 +1,55 @@
+---
+title: "Portrait scientific poster example"
+format:
+  poster-typst:
+    size: "36x48"
+    poster-authors: "First Author¹, Second Author², Senior Author¹"
+    departments: "¹ Department or Group, University · ² Collaborating Department, Institution"
+    institution-logo: "images/logo-placeholder.svg"
+    footer-text: "Conference Name · City, Country · Year"
+    footer-url: "https://example.org/poster"
+    footer-emails: "first.author@example.edu"
+    footer-color: "003057"
+    keywords: ["portrait", "quarto", "poster"]
+    num-columns: 2
+    title-font-size: 50
+execute:
+  echo: false
+  warning: false
+---
+
+# Motivation
+
+Portrait posters often work well when the conference board is tall or when the story needs a strong top-to-bottom flow.
+
+# Approach
+
+Use two body columns for a portrait poster unless the content is extremely compact.
+
+- Keep text blocks short.
+- Use large figures.
+- Put the most important result near the upper half.
+
+# Example result
+
+![Example result figure.](../figures/example-results.svg){width="100%"}
+
+# Main message
+
+::: {.block fill="rgb(232, 241, 250)" inset="12pt" radius="6pt"}
+
+Replace this callout with the single most important scientific result.
+
+:::
+
+# Conclusions
+
+- Keep the main conclusions brief.
+- Link to details with a QR code or short URL.
+- Check the PDF page size before printing.
+
+# Contact
+
+![QR-code placeholder.](../figures/qr-placeholder.svg){width="30%"}
+
+<https://example.org/poster>

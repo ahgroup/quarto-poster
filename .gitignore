@@ -1,17 +1,29 @@
+# Quarto intermediate/cache files
+.quarto/
+*_cache/
+cache/
+*.utf8.md
+*.knit.md
+
+# Rendered poster outputs are usually regenerated locally.
+# Commit selected PDFs only when intentionally sharing examples or releases.
+*.pdf
+!assets/**/*.pdf
+
 # R session and history files
 .Rhistory
 .Rapp.history
 .RData
-
-# Example code in R package build process
-*-Ex.R
-
-# Output files from R package build/check
-/*.tar.gz
-/*.Rcheck/
+Rplots.pdf
 
 # RStudio local project files
 .Rproj.user/
+
+# Python local environments/cache files, if examples add Python later
+.venv/
+venv/
+__pycache__/
+.ipynb_checkpoints/
 
 # OAuth2 tokens, secrets, and local environment files
 .httr-oauth
@@ -24,47 +36,11 @@
 *.p12
 *.pfx
 
-# knitr, R Markdown, and Quarto intermediate/cache files
-/*_cache/
-/cache/
-.quarto/
-*.utf8.md
-*.knit.md
-
-Rplots.pdf
-
 # Operating-system and editor clutter
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
-
-# Python local environments/cache files, if a project adds Python later
-.venv/
-venv/
-__pycache__/
-.ipynb_checkpoints/
-
-# renv local package libraries/state, if a project enables renv later
-renv/library/
-renv/staging/
-renv/local/
-renv/cellar/
-renv/lock/
-renv/python/
-renv/sandbox/
-
-# Local/private data files
-# Commit readmes/placeholders, but keep private or large data local.
-data/private-data/*
-!data/private-data/readme-private-data.md
-data/large-files/*
-!data/large-files/readme-large-files.md
-
-# Large generated result files
-# Generated outputs are generally committed, but large outputs belong here.
-results/large-files/*
-!results/large-files/readme-large-files.md
 
 # Local AI/tool state and scratch files
 .ai-local/
@@ -72,3 +48,6 @@ results/large-files/*
 .codex/
 .claude/settings.local.json
 .aider*
+
+/.quarto/
+**/*.quarto_ipynb

@@ -1,0 +1,10 @@
+[package]
+name = "typst-poster"
+version = "0.1.1"
+entrypoint = "poster.typ"
+authors = ["Parth Parikh <https://github.com/pncnmnp>"]
+license = "MIT"
+description = "An academic poster template for Typst"
+repository = "https://github.com/pncnmnp/typst-poster"
+keywords = ["poster", "academic", "conference", "research"]
+categories = ["poster"]

@@ -2,96 +2,56 @@
 #
 # This file is for AI tools to read and write as a convenience summary. It is not
 # human-facing documentation, and human users are not expected to read, write, or
-# maintain it.
-#
-# It should not contain unique project information. It summarizes information
-# that also appears in human-facing files such as readme.md, usage.md, agents.md,
-# and folder-specific readmes.
-#
-# If this summary disagrees with the human-facing documentation, the
-# human-facing documentation is the source of truth.
+# maintain it. Human-facing files such as readme.md, usage.md, and agents.md are
+# authoritative if they disagree with this summary.
 
 project:
-  title: "Example data analysis project"
-  short_name: "example-project"
-  project_type: "project-template" # project-template or project
+  title: "Quarto scientific poster template"
+  short_name: "quarto-poster"
+  project_type: "quarto-template"
   status: "template"
   license: "MIT"
   primary_outputs:
-    - "products/report/report.qmd"
-    - "products/manuscript/manuscript.qmd"
-    - "products/presentation/presentation.qmd"
+    - "template.qmd"
+    - "examples/portrait-poster.qmd"
 
 software:
-  primary_language: "R"
-  additional_languages: [] # e.g., Python, Julia
-  workflow_style: "workflow-stage folders with optional utilities for shared helpers"
+  primary_language: "Quarto"
+  additional_languages:
+    - "Typst"
+    - "R"
   quarto_required: true
-  languages:
-    - name: "R"
-      role: "default example workflow"
-      package_management: "manual" # manual by default; optional lockfiles/environment managers/containers only when needed
-      required_packages:
-        - "broom"
-        - "dplyr"
-        - "ggplot2"
-        - "here"
-        - "knitr"
-        - "readxl"
-        - "skimr"
-        - "tidyr"
+  minimum_quarto_version: "1.9.18"
+  template_format: "poster-typst"
+  package_management: "none by default"
+  optional_r_scripts:
+    - "code/make-example-figure.r"
 
-people:
-  project_owner: "NAME"
-  contributors:
-    - "NAME"
-
-data:
-  raw_data_location: "data/raw-data/"
-  processed_data_location: "data/processed-data/"
-  sensitivity: "example-data" # example-data, public, internal, sensitive, regulated
-  ai_may_inspect_raw_data: false
-  ai_may_inspect_processed_data: false
-  data_use_notes: "data/readme-data.md"
-
-reproducibility:
-  workflow_mode: "documented semi-automated"
-  workflow_instructions: "usage.md"
-  new_project_instructions: "new-project-instructions.md"
-  code_guidelines: "code-guidelines.md"
-  utilities_folder: "code/utilities/"
-  example_steps:
-    - "code/processing/processing-code.r"
-    - "code/exploration/eda-code.r"
-    - "code/analysis/statistical-analysis.r"
-  product_rendering: "render affected Quarto products manually"
-  session_reporting: "optional sessionInfo() section in report/manuscript products"
-  generated_output_policy: "commit generated outputs unless they are large or sensitive/restricted"
+template:
+  upstream_base: "quarto-ext/typst-templates/poster"
+  vendored_extension: "_extensions/poster/"
+  main_template: "template.qmd"
+  examples_folder: "examples/"
+  figures_folder: "figures/"
+  default_output: "PDF via Typst"
+  supported_examples:
+    - "landscape poster in template.qmd"
+    - "portrait poster in examples/portrait-poster.qmd"
 
 ai_assistance:
   allowed: true
   summary_file: "ai/project-summary.yml"
   log_file: "ai/ai-use-log.md"
-  log_format: "short text sections, not a table"
-  logging_scope: "meaningful project-specific AI assistance; routine template maintenance does not need extra logging unless requested"
-  uniform_user_expectations: "same basic AI-use expectations for all users"
   guidance_file: "agents.md"
   user_policy_file: "ai/ai-use-policy.md"
   prompt_files:
-    - "ai/prompts/start-project.prompt.md"
-    - "ai/prompts/analysis-plan.prompt.md"
-    - "ai/prompts/modeling-plan-review.prompt.md"
-    - "ai/prompts/code-review.prompt.md"
-    - "ai/prompts/reproducibility-audit.prompt.md"
-    - "ai/prompts/final-product-review.prompt.md"
+    - "ai/prompts/poster-content-review.prompt.md"
+    - "ai/prompts/poster-template-maintenance.prompt.md"
   human_review_required: true
   full_chat_transcripts_required: false
 
-optional_tools:
-  dependency_levels: "manual package lists by default; lockfiles/environment managers when exact versions matter; CI/containers for advanced controlled reruns"
-  renv: "optional when exact R package versions matter; not enabled by default"
-  python_virtualenv_or_conda: "recommended for Python-heavy projects, optional"
-  poetry: "optional for Python package-style projects"
-  julia_project: "recommended for Julia-heavy projects, optional"
-  containers: "recommended for complex multi-language projects, optional"
-  github_actions: "recommended for advanced users, not enabled by default"
+verification:
+  render_checks:
+    - "quarto render template.qmd"
+    - "quarto render examples/portrait-poster.qmd"
+  git_review: "git status --short"

@@ -1,162 +1,106 @@
 # Usage
 
-This file explains how to run and reproduce the example project. It is meant
-for humans. Run the commands yourself, inspect messages and warnings, and adjust
-the workflow as the project changes.
+This file explains how to create and render a scientific poster from this Quarto template.
 
-The default example uses R and Quarto. Projects can add Python, Julia, shell
-scripts, or other tools later without changing the overall folder structure.
+## Before you start
 
-## Before You Start
+Work from the repository root. In Positron, open this repository as a folder/project. Other editors such as VS Code or RStudio are also fine.
 
-Work from the project root folder. In Positron, open this repository as a
-project or folder so the project root is set automatically. Other editors, such
-as RStudio or VS Code, are also fine. If you use a terminal or another editor,
-make sure your working directory is the folder that contains `readme.md`,
-`usage.md`, and the main project folders.
+Required software:
 
-Install the example R packages before running the example workflow:
+- Quarto 1.9.18 or newer.
 
-```r
-install.packages(c("broom", "dplyr", "ggplot2", "here", "knitr",
-                   "readxl", "skimr", "tidyr"))
-```
+Optional software:
 
-Install Quarto if you want to render reports, manuscripts, presentations, or
-other Quarto products.
+- R, Python, or Julia if your poster generates figures or tables from code.
+- A reference manager if you add citations.
 
-## Example Code Files
-
-The example workflow is organized by stage.
-
-### Processing
-
-The processing stage imports, inspects, and cleans the raw example data.
-
-- `code/processing/processing-code.r` reads
-  `data/raw-data/example-data.xlsx`, inspects the raw data, cleans problematic
-  values, and saves `data/processed-data/processed-data.rds`.
-- `code/processing/processing-file-v1.qmd` is a Quarto version of the same
-  processing workflow with code and explanation in one file. It reads
-  `data/raw-data/example-data.xlsx` and saves
-  `data/processed-data/processed-data.rds`.
-- `code/processing/processing-file-v2.qmd` is another Quarto version of the same
-  workflow. It pulls labeled code chunks from `code/processing/processing-code.r`
-  and uses the raw example data to create
-  `data/processed-data/processed-data.rds`.
-
-### Exploration
-
-The exploration stage summarizes the processed data and creates exploratory
-outputs.
-
-- `code/exploration/eda-code.r` loads
-  `data/processed-data/processed-data.rds` and creates summary tables in
-  `results/tables/summary-table.*` and exploratory figures in
-  `results/figures/`.
-- `code/exploration/eda.qmd` is a Quarto version of the exploratory analysis
-  with code and explanation in one file. It uses the processed data and writes
-  the same kinds of summary tables and figures.
-- `code/exploration/eda-v2.qmd` is another Quarto version of the exploratory
-  analysis. It pulls labeled code chunks from `code/exploration/eda-code.r`, uses
-  the processed data, and writes the same kinds of summary tables and figures.
-
-### Analysis
-
-The analysis stage fits the example statistical models and saves model results.
-
-- `code/analysis/statistical-analysis.r` loads
-  `data/processed-data/processed-data.rds`, fits example linear models, and saves
-  model-result tables in `results/tables/result-table-1.*` and
-  `results/tables/result-table-2.*`.
-
-The Quarto files in `code/processing/` and `code/exploration/` are alternative
-ways to run and document the same work. 
-
-
-## Run The Example Workflow
-
-This template uses a documented, semi-automated workflow. That means the work is
-reproducible from code, but you can still run the code in understandable pieces.
-You should not manually edit raw Excel files, generated tables, or generated
-figures. Instead, update the code and rerun the affected step.
-
-For the example project, the simplest path is to run the R scripts manually in this order:
-
-1. `code/processing/processing-code.r`
-2. `code/exploration/eda-code.r`
-3. `code/analysis/statistical-analysis.r`
-
-
-If a script fails because a package is missing, install that package
-deliberately and rerun the script. Do not silently install packages inside
-analysis scripts.
-
-## Render Products
-
-After the results have been regenerated, render the products you need.
+Check Quarto with:
 
 ```sh
-quarto render products/report/report.qmd
-quarto render products/manuscript/manuscript.qmd
-quarto render products/presentation/presentation.qmd
+quarto --version
 ```
 
-The supplementary material renders to PDF and may require a TeX installation:
+## Render the main example
+
+From the repository root, run:
 
 ```sh
-quarto render products/manuscript/supplement/supplementary-material.qmd
+quarto render template.qmd
 ```
 
-## Review And Reproducibility Checks
+This creates `template.pdf`.
 
-Generated outputs are generally committed if they are reasonably small and do
-not contain sensitive information. Do not commit large generated files or outputs
-that contain sensitive, private, regulated, identifiable, or otherwise restricted
-information. Instead, put those files in a documented ignored location such as
-`results/large-files/` or `data/private-data/`.
+## Render the portrait example
 
-Before sharing work or accepting AI-assisted changes, review the project
-manually:
-
-- Confirm that files in `data/raw-data/` were not edited.
-- Confirm that generated outputs in `results/` can be traced to code in
-  `code/`.
-- Confirm that no credentials, tokens, private data, or local-only paths were
-  added.
-- Confirm that package and software requirements are documented in `readme.md`
-  or another human-facing documentation file.
-- For reports or manuscripts, decide whether to keep, remove, or adapt optional
-  software/session information such as `sessionInfo()` based on the project needs.
-- Confirm that code follows `code-guidelines.md`, especially documentation,
-  hard-failure behavior, simplicity, mature dependency choices, and
-  project-relative paths.
-- If AI tools helped with meaningful work, follow the disclosure guidance in
-  `ai/ai-use-policy.md`. The AI tool should update `ai/ai-use-log.md` when
-  logging is appropriate; human users may read that log as needed.
-- Check for unresolved template placeholders such as `NAME`, `LINK-GOES-HERE`,
-  sample email addresses, and example author details. Replace them with
-  project-specific information or document why they remain.
-
-
-## Adding Another Language
-
-Place scripts in the workflow-stage folder where they belong. For example:
-
-```text
-code/processing/02-geocode-data.py
-code/analysis/03-run-simulation.jl
+```sh
+quarto render examples/portrait-poster.qmd
 ```
 
-Then update this file with:
+This creates `examples/portrait-poster.pdf`.
 
-- the new script name;
-- what it does;
-- what inputs it needs;
-- what outputs it creates;
-- when it should be run;
-- any package or environment setup required.
+## Create a new poster from the template
 
-Follow `code-guidelines.md` when adding or editing code. In particular, keep
-scientific code simple, thoroughly commented, strict about unexpected inputs,
-and runnable in a clean session.
+From a folder where you want the new poster project to be created, run:
+
+```sh
+quarto use template ahgroup/quarto-poster
+```
+
+Quarto will copy the template files and the poster extension into the new folder. Edit the generated `.qmd` file and render it with `quarto render`.
+
+## Edit poster metadata
+
+At the top of the poster file, edit the YAML block. Common fields are:
+
+- `title`: poster title.
+- `poster-authors`: author line shown below the title.
+- `departments`: affiliation line.
+- `institution-logo`: path to a header logo file. Because of the upstream Typst poster extension, this path is relative to the bundled Typst poster package; the default placeholder is `images/logo-placeholder.svg` inside `_extensions/poster/typst/packages/local/typst-poster/0.1.1/images/`. If you need a custom header logo, copy it into that package `images/` folder and update this field. Ordinary body figures can stay in the repository-level `figures/` folder.
+- `footer-text`: conference, location, date, or funding note.
+- `footer-url`: project, preprint, paper, or repository URL.
+- `footer-emails`: contact email address or addresses.
+- `keywords`: short tags shown near the top of the poster.
+- `size`: physical poster size in inches, such as `48x36` or `36x48`.
+- `num-columns`: number of body columns.
+
+## Edit poster content
+
+The poster body is ordinary Quarto/Markdown. Level-1 headings become major poster sections. Keep sections short and visual.
+
+Recommended sections for a standard scientific poster:
+
+- Background or Motivation
+- Objective or Research Question
+- Methods
+- Results
+- Key Takeaway
+- Conclusions
+- Acknowledgements / Funding / Contact
+
+## Figures and tables
+
+Use vector graphics such as SVG or PDF whenever possible. PNG files can work if they are high resolution.
+
+A simple example figure is included in `figures/example-results.svg`. It can be regenerated with:
+
+```sh
+Rscript code/make-example-figure.r
+```
+
+If your poster has real analysis code, keep code and generated figures synchronized. Commit small non-sensitive figures when doing so helps others render the poster. Do not commit sensitive, restricted, or very large data/output files.
+
+## Final checks before printing
+
+Before sending a poster to a printer or conference system:
+
+- Confirm the PDF page size matches the required poster size.
+- Zoom in and check that text and figures remain sharp.
+- Check title, author names, affiliations, acknowledgements, funding, and contact information.
+- Check spelling, figure legends, axis labels, and units.
+- Verify QR codes and URLs.
+- Confirm all reused logos, figures, and references are allowed to appear on the poster.
+
+## AI-assisted editing
+
+AI tools can help revise wording, check layout, create example code, and review for reproducibility. Human users remain responsible for scientific accuracy, authorship, citation accuracy, privacy, and final poster approval. See `ai/ai-use-policy.md` and `agents.md` for details.

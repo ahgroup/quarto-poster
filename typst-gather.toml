@@ -1,0 +1,18 @@
+# typst-gather configuration
+# Run: quarto call typst-gather
+
+rootdir = "_extensions/poster"
+destination = "typst/packages"
+
+discover = ["typst-template.typ", "typst-show.typ"]
+
+# Preview packages are auto-discovered from imports.
+# Uncomment to pin specific versions:
+# [preview]
+# cetz = "0.4.1"
+
+# Local packages (@local namespace) must be configured manually.
+# Found @local imports:
+#   @local/typst-poster:0.1.1 (in typst-template.typ)
+[local]
+typst-poster = "../../typst-poster"

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" role="img" aria-labelledby="title desc">
+  <title id="title">QR code placeholder</title>
+  <desc id="desc">Placeholder square to replace with a real QR code.</desc>
+  <rect width="400" height="400" fill="white" stroke="#111111" stroke-width="10"/>
+  <rect x="40" y="40" width="95" height="95" fill="#111111"/>
+  <rect x="60" y="60" width="55" height="55" fill="white"/>
+  <rect x="265" y="40" width="95" height="95" fill="#111111"/>
+  <rect x="285" y="60" width="55" height="55" fill="white"/>
+  <rect x="40" y="265" width="95" height="95" fill="#111111"/>
+  <rect x="60" y="285" width="55" height="55" fill="white"/>
+  <rect x="180" y="170" width="35" height="35" fill="#111111"/>
+  <rect x="230" y="170" width="35" height="35" fill="#111111"/>
+  <rect x="180" y="220" width="85" height="35" fill="#111111"/>
+  <rect x="285" y="220" width="35" height="85" fill="#111111"/>
+  <rect x="180" y="285" width="35" height="35" fill="#111111"/>
+  <text x="200" y="385" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#111111">replace me</text>
+</svg>
