@@ -5,14 +5,25 @@ format:
     size: "36x48"
     poster-authors: "First Author¹, Second Author², Senior Author¹"
     departments: "¹ Department or Group, University · ² Collaborating Department, Institution"
-    institution-logo: "../figures/logo-placeholder.svg"
+    poster-banner: "../figures/poster-banner.svg"
     footer-text: "Conference Name · City, Country · Year"
     footer-url: "https://example.org/poster"
     footer-emails: "first.author@example.edu"
     footer-color: "003057"
     keywords: ["portrait", "quarto", "poster"]
     num-columns: 2
-    title-font-size: 50
+    body-font-size: 24
+    title-row-size: 6.2
+    title-font-size: 58
+    authors-font-size: 32
+    department-font-size: 24
+    footer-url-font-size: 24
+    footer-text-font-size: 32
+    margin-top: 0.15
+    margin-left: 0.9
+    margin-right: 0.9
+    margin-bottom: 1.8
+    space-after-header: 10
 execute:
   echo: false
   warning: false

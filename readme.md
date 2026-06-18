@@ -35,7 +35,7 @@ The rendered output is `template.pdf`.
 - `template.qmd`: the main landscape poster template.
 - `examples/portrait-poster.qmd`: a portrait-format example.
 - `_extensions/poster/`: the official Quarto Typst poster extension vendored into the template so posters render without an extra setup step.
-- `figures/`: placeholder logos and example figures used by the poster examples.
+- `figures/`: the full-width header banner, placeholder logos/QR code, and example figures used by the poster examples.
 - `code/make-example-figure.r`: optional base-R script that regenerates the example SVG figure.
 - `usage.md`: practical instructions for editing, rendering, and adapting posters.
 - `ai/`: AI-use policy, reusable prompt templates, and AI-oriented project summary.
@@ -55,7 +55,7 @@ Optional:
 
 1. Edit the YAML at the top of the poster file: title, authors, affiliation, size, logos, footer text, and keywords.
 2. Replace the example sections with your poster content.
-3. Put static images and logos in `figures/` or another documented folder.
+3. Put static images, banner artwork, logos, and QR codes in `figures/` or another documented folder.
 4. Generate analysis figures from code when possible, then insert the resulting image files into the poster.
 5. Render with `quarto render`.
 6. Open the PDF and check physical size, fonts, figure resolution, spacing, and margins before printing.

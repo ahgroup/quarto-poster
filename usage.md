@@ -56,7 +56,7 @@ At the top of the poster file, edit the YAML block. Common fields are:
 - `title`: poster title.
 - `poster-authors`: author line shown below the title.
 - `departments`: affiliation line.
-- `institution-logo`: path to a header logo file, such as `figures/logo-placeholder.svg`. For posters in subfolders, use a relative path from the poster source file, such as `../figures/logo-placeholder.svg`.
+- `poster-banner`: path to the full-width header/banner image, such as `figures/poster-banner.svg`. For posters in subfolders, use a relative path from the poster source file, such as `../figures/poster-banner.svg`.
 - `footer-text`: conference, location, date, or funding note.
 - `footer-url`: project, preprint, paper, or repository URL.
 - `footer-emails`: contact email address or addresses.

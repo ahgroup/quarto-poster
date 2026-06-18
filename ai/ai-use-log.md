@@ -9,3 +9,7 @@ AI assistance helped remove MDS/data-analysis template remnants, add Quarto/Typs
 ## 2026-06-18 — Fixed header logo path handling
 
 AI assistance updated the bundled Typst/Quarto poster extension so `institution-logo` paths are resolved from the poster source file instead of the vendored Typst package. The default header logo can now live in `figures/logo-placeholder.svg`, and the portrait example uses `../figures/logo-placeholder.svg`. Checks included rendering the main and portrait posters and creating/rendering a fresh poster project with `quarto use template`.
+
+## 2026-06-18 — Updated default visual design
+
+AI assistance revised the default poster layout to use a full-width banner-style header with centered title, author, and affiliation text, inspired by the PhysMed Quarto poster template. The example now uses `poster-banner` instead of `institution-logo`, with banner artwork stored in `figures/poster-banner.svg`. Checks included rendering the main and portrait posters and creating/rendering a fresh poster project with `quarto use template`.

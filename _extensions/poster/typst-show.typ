@@ -19,12 +19,10 @@
   $if(departments)$ departments: [$departments$], $endif$
   $if(size)$ size: "$size$", $endif$
 
-  // Institution logo.
+  // Full-width poster banner/logos.
   // Build the image call here, in the poster document, so paths are resolved
-  // relative to the user's .qmd/.typ file rather than relative to the bundled
-  // Typst package. This lets users keep logos in ordinary project folders such
-  // as figures/.
-  $if(institution-logo)$ univ_logo: (width => image("$institution-logo$", width: width)), $endif$
+  // relative to the user's .qmd/.typ file.
+  $if(poster-banner)$ banner: (width => image("$poster-banner$", width: width)), $endif$
 
   // Footer text.
   // For instance, Name of Conference, Date, Location.
@@ -72,7 +70,31 @@
   $if(footer-url-font-size)$ footer_url_font_size: $footer-url-font-size$, $endif$
 
   // Footer's text font size (in pt).
-  $if(footer-text-font-size)$ footer_text_font_size: [$footer-text-font-size$], $endif$
+  $if(footer-text-font-size)$ footer_text_font_size: $footer-text-font-size$, $endif$
+
+  // Font size of the body text.
+  $if(body-font-size)$ body_font_size: $body-font-size$, $endif$
+
+  // Header row height (in inches).
+  $if(title-row-size)$ title_row_size: $title-row-size$, $endif$
+
+  // Departments/affiliations font size (in pt).
+  $if(department-font-size)$ department_font_size: $department-font-size$, $endif$
+
+  // Margin top (in inches).
+  $if(margin-top)$ margin_top: $margin-top$, $endif$
+
+  // Margin left (in inches).
+  $if(margin-left)$ margin_left: $margin-left$, $endif$
+
+  // Margin right (in inches).
+  $if(margin-right)$ margin_right: $margin-right$, $endif$
+
+  // Margin bottom (in inches).
+  $if(margin-bottom)$ margin_bottom: $margin-bottom$, $endif$
+
+  // Space after header information (in pt).
+  $if(space-after-header)$ space_after_header: $space-after-header$, $endif$
 
   doc,
 )
