@@ -35,8 +35,11 @@
   // Emails of the authors.
   $if(footer-emails)$ footer_email_ids: [$footer-emails$], $endif$
 
-  // Color of the footer.
+  // Color of the footer and section heading bars.
   $if(footer-color)$ footer_color: "$footer-color$", $endif$
+
+  // Header text color.
+  $if(header-text-color)$ header_text_color: "$header-text-color$", $endif$
 
   // DEFAULTS
   // ========

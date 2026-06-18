@@ -28,8 +28,11 @@
   // Email IDs of the authors.
   footer_email_ids: "Email IDs (separated by commas)",
 
-  // Color of the footer.
+  // Color of the footer and section heading bars.
   footer_color: "Hex Color Code",
+
+  // Header text color.
+  header_text_color: "111111",
 
   // Font size of the poster body text, in pt.
   body_font_size: "24",
@@ -81,6 +84,7 @@
   department_font_size = int(department_font_size) * 1pt
   footer_url_font_size = int(footer_url_font_size) * 1pt
   footer_text_font_size = int(footer_text_font_size) * 1pt
+  let header_text_fill = rgb(header_text_color)
   num_columns = int(num_columns)
   title_row_size = float(title_row_size) * 1in
   margin_top = float(margin_top) * 1in
@@ -131,19 +135,23 @@
   show heading: it => context {
     set text(weight: 400)
     if it.level == 1 [
-      #set align(center)
-      #set text(32pt, weight: 600)
-      #show: smallcaps
-      #v(20pt, weak: true)
-      #it.body
-      #v(14pt, weak: true)
-      #line(length: 100%, stroke: 1.5pt + rgb("003057"))
+      #v(18pt, weak: true)
+      #block(
+        fill: rgb(footer_color),
+        width: 100%,
+        inset: (x: 12pt, y: 8pt),
+      )[
+        #set align(left)
+        #set text(30pt, fill: white, weight: 700)
+        #it.body
+      ]
       #v(10pt, weak: true)
     ] else if it.level == 2 [
-      #set text(24pt, style: "italic")
-      #v(18pt, weak: true)
+      #set text(22pt, weight: 600)
+      #v(12pt, weak: true)
       #it.body
-      #v(6pt, weak: true)
+      #line(length: 35%, stroke: 0.8pt + rgb(footer_color))
+      #v(4pt, weak: true)
     ] else [
       _#(it.body):_
     ]
@@ -154,11 +162,11 @@
     block(width: 100%, height: title_row_size)[
       #set align(center)
       #v(0.35in)
-      #par(leading: 0.62em, text(title_font_size, white, title, weight: 700))
+      #par(leading: 0.62em, text(title_font_size, header_text_fill, title, weight: 700))
       #v(0.22in)
-      #text(authors_font_size, white, authors)
+      #text(authors_font_size, header_text_fill, authors, weight: 600)
       #v(0.14in)
-      #text(department_font_size, white, departments)
+      #text(department_font_size, header_text_fill, departments)
     ]
   )
 

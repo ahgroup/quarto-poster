@@ -25,17 +25,16 @@ quarto render your-poster.qmd
 To preview the template in this repository:
 
 ```sh
-quarto render template.qmd
+quarto render starter-poster.qmd
 ```
 
-The rendered output is `template.pdf`.
+The rendered output is `starter-poster.pdf`.
 
 ## What this template includes
 
-- `template.qmd`: the main landscape poster template.
-- `examples/portrait-poster.qmd`: a portrait-format example.
+- `starter-poster.qmd`: the single starter poster file, used both as an example and as the starting point for a real poster.
 - `_extensions/poster/`: the official Quarto Typst poster extension vendored into the template so posters render without an extra setup step.
-- `figures/`: the full-width header banner, placeholder logos/QR code, and example figures used by the poster examples.
+- `figures/`: the full-width header banner, placeholder logos/QR code, study-flow graphic, and example result figures used by the starter poster.
 - `code/make-example-figure.r`: optional base-R script that regenerates the example SVG figure.
 - `usage.md`: practical instructions for editing, rendering, and adapting posters.
 - `ai/`: AI-use policy, reusable prompt templates, and AI-oriented project summary.

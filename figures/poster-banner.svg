@@ -1,34 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="4800" height="720" viewBox="0 0 4800 720" role="img" aria-labelledby="title desc">
-  <title id="title">Poster banner placeholder</title>
-  <desc id="desc">A full-width blue scientific poster banner with logo placeholders at both sides.</desc>
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#00263A"/>
-      <stop offset="0.52" stop-color="#003057"/>
-      <stop offset="1" stop-color="#0B4F6C"/>
-    </linearGradient>
-    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#BA0C2F"/>
-      <stop offset="1" stop-color="#F2A900"/>
-    </linearGradient>
-  </defs>
-  <rect width="4800" height="720" fill="url(#bg)"/>
-  <rect y="640" width="4800" height="80" fill="url(#accent)" opacity="0.95"/>
-  <path d="M0,560 C720,450 1120,660 1800,560 C2500,455 2960,635 3600,535 C4100,455 4450,500 4800,430 L4800,720 L0,720 Z" fill="#ffffff" opacity="0.08"/>
-
-  <g transform="translate(150,120)">
-    <rect width="600" height="360" rx="38" fill="#ffffff" opacity="0.96"/>
-    <circle cx="145" cy="180" r="92" fill="#BA0C2F"/>
-    <path d="M100 198h90l-45-92z" fill="#ffffff"/>
-    <text x="280" y="160" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="700" fill="#003057">Logo</text>
-    <text x="280" y="220" font-family="Arial, Helvetica, sans-serif" font-size="34" fill="#003057">left</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="4800" height="620" viewBox="0 0 4800 620" role="img" aria-labelledby="title desc">
+  <title id="title">Poster header banner placeholder</title>
+  <desc id="desc">A clean white scientific poster header with an institutional logo placeholder on the left and an accent rule at the bottom.</desc>
+  <rect width="4800" height="620" fill="#ffffff"/>
+  <rect x="80" y="90" width="820" height="360" rx="18" fill="#ffffff" stroke="#dddddd" stroke-width="4"/>
+  <g transform="translate(130,130)">
+    <rect width="230" height="260" fill="#111111"/>
+    <path d="M70 215 V95 C70 40 160 40 160 95 V215" fill="none" stroke="#ffffff" stroke-width="18"/>
+    <path d="M52 215 H178" stroke="#ffffff" stroke-width="18"/>
+    <circle cx="115" cy="226" r="38" fill="#BA0C2F"/>
+    <text x="115" y="240" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#ffffff">1785</text>
   </g>
-
-  <g transform="translate(4050,120)">
-    <rect width="600" height="360" rx="38" fill="#ffffff" opacity="0.96"/>
-    <circle cx="145" cy="180" r="92" fill="#003057"/>
-    <path d="M92 180h106M145 127v106" stroke="#ffffff" stroke-width="28" stroke-linecap="round"/>
-    <text x="280" y="160" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="700" fill="#003057">Logo</text>
-    <text x="280" y="220" font-family="Arial, Helvetica, sans-serif" font-size="34" fill="#003057">right</text>
-  </g>
+  <text x="410" y="215" font-family="Georgia, 'Times New Roman', serif" font-size="78" font-weight="700" letter-spacing="10" fill="#111111">UNIVERSITY</text>
+  <text x="410" y="305" font-family="Georgia, 'Times New Roman', serif" font-size="86" font-weight="700" fill="#BA0C2F">PLACEHOLDER</text>
+  <text x="410" y="370" font-family="Georgia, 'Times New Roman', serif" font-size="42" fill="#111111">Research Group or Department</text>
+  <rect x="110" y="540" width="4580" height="26" fill="#BA0C2F"/>
 </svg>

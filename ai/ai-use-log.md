@@ -13,3 +13,7 @@ AI assistance updated the bundled Typst/Quarto poster extension so `institution-
 ## 2026-06-18 — Updated default visual design
 
 AI assistance revised the default poster layout to use a full-width banner-style header with centered title, author, and affiliation text, inspired by the PhysMed Quarto poster template. The example now uses `poster-banner` instead of `institution-logo`, with banner artwork stored in `figures/poster-banner.svg`. Checks included rendering the main and portrait posters and creating/rendering a fresh poster project with `quarto use template`.
+
+## 2026-06-18 — Simplified to one starter poster
+
+AI assistance replaced the separate `template.qmd` plus `examples/` layout with a single root-level `starter-poster.qmd`, enriched the starter poster with generic sections, example table, study-flow graphic, descriptive result figure, and coefficient plot inspired by an existing scientific poster layout, and updated documentation accordingly.

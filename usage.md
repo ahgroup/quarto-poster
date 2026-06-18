@@ -26,18 +26,10 @@ quarto --version
 From the repository root, run:
 
 ```sh
-quarto render template.qmd
+quarto render starter-poster.qmd
 ```
 
-This creates `template.pdf`.
-
-## Render the portrait example
-
-```sh
-quarto render examples/portrait-poster.qmd
-```
-
-This creates `examples/portrait-poster.pdf`.
+This creates `starter-poster.pdf`.
 
 ## Create a new poster from the template
 
@@ -66,7 +58,7 @@ At the top of the poster file, edit the YAML block. Common fields are:
 
 ## Edit poster content
 
-The poster body is ordinary Quarto/Markdown. Level-1 headings become major poster sections. Keep sections short and visual.
+The poster body is ordinary Quarto/Markdown. Level-1 headings become red section bars, and level-2 headings become smaller subsection labels. Keep sections short and visual.
 
 Recommended sections for a standard scientific poster:
 
@@ -82,7 +74,7 @@ Recommended sections for a standard scientific poster:
 
 Use vector graphics such as SVG or PDF whenever possible. PNG files can work if they are high resolution.
 
-A simple example figure is included in `figures/example-results.svg`. It can be regenerated with:
+Example result figures are included in `figures/example-results.svg` and `figures/example-model-estimates.svg`. They can be regenerated with:
 
 ```sh
 Rscript code/make-example-figure.r

@@ -16,8 +16,7 @@ These instructions are for AI coding agents and human users who want to understa
 
 - `readme.md`: human-facing overview and quick start.
 - `usage.md`: practical instructions for editing and rendering posters.
-- `template.qmd`: main landscape poster source used by `quarto use template`.
-- `examples/`: additional poster examples, such as portrait format.
+- `starter-poster.qmd`: single starter poster source used both as an example and as the file users edit for their own poster.
 - `_extensions/poster/`: vendored official Quarto Typst poster extension.
 - `figures/`: example figures, logos, and QR-code placeholders used by examples.
 - `code/`: optional code that generates example figures or other template assets.
@@ -33,13 +32,13 @@ These instructions are for AI coding agents and human users who want to understa
 - Do not add large data files, raw-data examples, manuscript/report products, or generated analysis outputs unless they directly support the poster template.
 - Keep filenames lower-case and descriptive, with words separated by hyphens.
 - Prefer simple Markdown and YAML over elaborate custom filters or fragile automation.
-- If changing `template.qmd` or extension files, render the affected poster before reporting success.
+- If changing `starter-poster.qmd` or extension files, render the affected poster before reporting success.
 - If changing optional code in `code/`, run it and confirm generated outputs are updated.
 - Fix obvious small typos/errors encountered and report what was fixed. Flag unclear or larger issues without guessing.
 
 ## Quarto/Typst extension notes
 
-The poster format is provided by `_extensions/poster/`, copied from the official Quarto Typst poster template. Keep local customizations minimal unless there is a clear need. When updating the vendored extension, document the upstream source and verify that `template.qmd` still renders.
+The poster format is provided by `_extensions/poster/`, copied from the official Quarto Typst poster template. Keep local customizations minimal unless there is a clear need. When updating the vendored extension, document the upstream source and verify that `starter-poster.qmd` still renders.
 
 ## AI assistance documentation
 

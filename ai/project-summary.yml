@@ -12,8 +12,7 @@ project:
   status: "template"
   license: "MIT"
   primary_outputs:
-    - "template.qmd"
-    - "examples/portrait-poster.qmd"
+    - "starter-poster.qmd"
 
 software:
   primary_language: "Quarto"
@@ -30,13 +29,11 @@ software:
 template:
   upstream_base: "quarto-ext/typst-templates/poster"
   vendored_extension: "_extensions/poster/"
-  main_template: "template.qmd"
-  examples_folder: "examples/"
+  main_template: "starter-poster.qmd"
   figures_folder: "figures/"
   default_output: "PDF via Typst"
   supported_examples:
-    - "landscape poster in template.qmd"
-    - "portrait poster in examples/portrait-poster.qmd"
+    - "starter poster in starter-poster.qmd"
 
 ai_assistance:
   allowed: true
@@ -52,6 +49,5 @@ ai_assistance:
 
 verification:
   render_checks:
-    - "quarto render template.qmd"
-    - "quarto render examples/portrait-poster.qmd"
+    - "quarto render starter-poster.qmd"
   git_review: "git status --short"
