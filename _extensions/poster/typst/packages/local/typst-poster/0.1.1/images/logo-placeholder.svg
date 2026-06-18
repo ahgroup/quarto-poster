@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="300" viewBox="0 0 900 300" role="img" aria-labelledby="title desc">
-  <title id="title">Logo placeholder</title>
-  <desc id="desc">A simple placeholder logo for the poster template.</desc>
-  <rect width="900" height="300" rx="28" fill="#003057"/>
-  <circle cx="150" cy="150" r="82" fill="#BA0C2F"/>
-  <path d="M112 159h76l-38-72z" fill="white" opacity="0.95"/>
-  <text x="275" y="130" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700" fill="white">Research Group</text>
-  <text x="276" y="190" font-family="Arial, Helvetica, sans-serif" font-size="34" fill="white" opacity="0.9">replace with your logo</text>
-</svg>

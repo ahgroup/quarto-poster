@@ -13,8 +13,10 @@
   // Department name.
   departments: "Department Name",
 
-  // University logo.
-  univ_logo: "Logo Path",
+  // University logo. This is a function that accepts a width and returns image
+  // content. The Quarto template builds that function in the user's document so
+  // paths are resolved relative to the poster source file.
+  univ_logo: (width => []),
 
   // Footer text.
   // For instance, Name of Conference, Date, Location.
@@ -167,7 +169,7 @@
       columns: (univ_logo_column_size, title_column_size),
       column-gutter: 0pt,
       row-gutter: 50pt,
-      image(univ_logo, width: univ_logo_scale),
+      univ_logo(univ_logo_scale),
       text(title_font_size, title + "\n\n") +
       text(authors_font_size, emph(authors) +
           "   (" + departments + ") "),

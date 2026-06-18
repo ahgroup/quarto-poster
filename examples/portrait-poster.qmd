@@ -5,7 +5,7 @@ format:
     size: "36x48"
     poster-authors: "First Author¹, Second Author², Senior Author¹"
     departments: "¹ Department or Group, University · ² Collaborating Department, Institution"
-    institution-logo: "images/logo-placeholder.svg"
+    institution-logo: "../figures/logo-placeholder.svg"
     footer-text: "Conference Name · City, Country · Year"
     footer-url: "https://example.org/poster"
     footer-emails: "first.author@example.edu"

@@ -20,7 +20,11 @@
   $if(size)$ size: "$size$", $endif$
 
   // Institution logo.
-  $if(institution-logo)$ univ_logo: "$institution-logo$", $endif$
+  // Build the image call here, in the poster document, so paths are resolved
+  // relative to the user's .qmd/.typ file rather than relative to the bundled
+  // Typst package. This lets users keep logos in ordinary project folders such
+  // as figures/.
+  $if(institution-logo)$ univ_logo: (width => image("$institution-logo$", width: width)), $endif$
 
   // Footer text.
   // For instance, Name of Conference, Date, Location.

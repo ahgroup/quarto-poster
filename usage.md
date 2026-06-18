@@ -56,7 +56,7 @@ At the top of the poster file, edit the YAML block. Common fields are:
 - `title`: poster title.
 - `poster-authors`: author line shown below the title.
 - `departments`: affiliation line.
-- `institution-logo`: path to a header logo file. Because of the upstream Typst poster extension, this path is relative to the bundled Typst poster package; the default placeholder is `images/logo-placeholder.svg` inside `_extensions/poster/typst/packages/local/typst-poster/0.1.1/images/`. If you need a custom header logo, copy it into that package `images/` folder and update this field. Ordinary body figures can stay in the repository-level `figures/` folder.
+- `institution-logo`: path to a header logo file, such as `figures/logo-placeholder.svg`. For posters in subfolders, use a relative path from the poster source file, such as `../figures/logo-placeholder.svg`.
 - `footer-text`: conference, location, date, or funding note.
 - `footer-url`: project, preprint, paper, or repository URL.
 - `footer-emails`: contact email address or addresses.
