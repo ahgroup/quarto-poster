@@ -1,114 +1,138 @@
 ---
-title: "Example scientific poster title with a clear main finding"
+title: "Immune priming effects of prior influenza vaccination on subsequent vaccine response"
 format:
   poster-typst:
-    size: "48x36"
-    poster-authors: "First Author¹, Second Author², Senior Author¹"
-    departments: "¹ Department or Research Group, University · ² Collaborating Department, Institution"
+    size: "40x22.5"
+    poster-authors: "Murphy John^, Ted Ross*, Andrea Sant†, Andreas Handel^"
+    departments: "^Department of Epidemiology and Biostatistics, University of Georgia, Athens, GA, USA · *Cleveland Clinic Florida Research & Innovation Center, Port St. Lucie, FL, USA · †Department of Microbiology and Immunology, University of Rochester, Rochester, NY, USA"
     poster-banner: "figures/poster-banner.svg"
     header-text-color: "111111"
-    footer-text: "Conference Name · City, Country · Year"
-    footer-url: "https://example.org/poster"
-    footer-emails: "first.author@example.edu"
+    show-footer: "false"
     footer-color: "BA0C2F"
-    keywords: ["study design", "example results", "reproducible poster"]
-    num-columns: 3
-    body-font-size: 22
-    title-row-size: 5.0
-    title-font-size: 60
-    authors-font-size: 30
-    department-font-size: 22
-    footer-url-font-size: 24
-    footer-text-font-size: 32
-    margin-top: 0.15
-    margin-left: 0.75
-    margin-right: 0.75
-    margin-bottom: 1.6
-    space-after-header: 8
+    num-columns: 1
+    body-font-size: 11
+    title-row-size: 4.15
+    title-font-size: 30
+    authors-font-size: 15
+    department-font-size: 9
+    margin-top: 0.25
+    margin-left: 0.55
+    margin-right: 0.55
+    margin-bottom: 0.2
+    space-after-header: 0
 execute:
   echo: false
   warning: false
 ---
 
-# Introduction
+```{=typst}
+#let red = rgb("BA0C2F")
+#let uga-black = rgb("111111")
+#let colw = 12.55in
+#let gutter = 0.42in
+#let sec(title) = block(fill: red, width: 100%, inset: (x: 8pt, y: 4.5pt))[#text(fill: white, weight: 700, size: 16pt)[#title]]
+#let sub(title) = [#v(5pt)#text(weight: 700, size: 11pt)[#title]#v(2pt)]
+#let para(body) = block(width: 100%)[#text(size: 9.2pt)[#body]]
+#let small(body) = text(size: 7.0pt)[#body]
+#set text(font: "Arial", size: 9.2pt, fill: uga-black)
+#set par(justify: true, leading: 0.53em)
+#set list(indent: 8pt, body-indent: 5pt)
 
-Scientific posters work best when they tell a focused story. Use this first section to state the problem, why it matters, and what gap your project addresses.
+#grid(
+  columns: (colw, colw, colw),
+  column-gutter: gutter,
+  align: top,
 
-This generic starter poster is deliberately more complete than a blank file. Replace the example topic, figures, and tables with your own project-specific material.
+  [
+    #sec[Introduction]
+    #para[
+      Seasonal influenza vaccination is the primary strategy to reduce influenza-related illness and death. Multiple vaccine types are available. Previous work has shown (1) vaccine formulation influences immune response [1–4] and (2) repeated annual vaccination can reduce antibody responses [5–7]. Optimal vaccine choice and sequencing remain uncertain and may vary by age. This study investigates how prior vaccine type affects subsequent H1N1 antibody responses across a broad adult population.
+    ]
 
-**Main question:** How does the exposure, intervention, method, or model being studied affect the outcome of interest?
+    #v(0.08in)
+    #image("figures/original-assets/crops/picture-9.png", width: 100%)
 
-![Use simple visual summaries to orient readers. This placeholder mimics an icon-based study overview.](figures/study-overview.svg){width="92%"}
+    #v(0.08in)
+    #sec[Methods]
+    #sub[Data]
+    #para[
+      #list(
+        [We analyzed data from two prior influenza vaccine studies: a longitudinal cohort (FluVac, 2013–2025) and a randomized clinical trial (URIV, 2015–2020).],
+        [Across multiple U.S. sites, participants received various influenza vaccine formulations.],
+        [Serum samples were collected pre- and post-vaccination, and antibodies were measured.],
+      )
+    ]
+    #text(size: 8.2pt, weight: 700)[Table 1: Number of observations by prior and current vaccine.]
+    #v(0.03in)
+    #image("figures/original-assets/crops/picture-252.png", width: 94%)
 
-# Methods
+    #sub[Statistical Analysis]
+    #para[
+      #list(
+        [Multivariable linear regression was used to model antibody fold-change as a function of pre-titer, prior vaccine, age, current vaccine strain, and vaccine strain change.],
+        [Models were fit by current vaccine group.],
+      )
+    ]
+  ],
 
-## Data or study design
+  [
+    #sec[Univariable Analysis]
+    #grid(columns: (1fr, 1fr), column-gutter: 0.12in,
+      [#align(center)[#text(size: 10pt, weight: 700)[Fold-change]]],
+      [#align(center)[#text(size: 10pt, weight: 700)[Post-vaccination titer]]],
+    )
+    #v(0.04in)
+    #grid(columns: (1fr, 1fr), column-gutter: 0.10in, row-gutter: 0.06in,
+      [#image("figures/original-assets/crops/picture-14.png", width: 100%)],
+      [#image("figures/original-assets/crops/picture-44.png", width: 100%)],
+      [#image("figures/original-assets/crops/picture-13.png", width: 100%)],
+      [#image("figures/original-assets/crops/picture-42.png", width: 100%)],
+      [#image("figures/original-assets/crops/picture-14.png", width: 100%)],
+      [#image("figures/original-assets/crops/picture-44.png", width: 100%)],
+    )
+  ],
 
-Describe the study population, experiment, simulation, or data source. Keep enough detail for readers to understand what was measured without recreating the entire manuscript.
+  [
+    #sec[Multivariable Regression Analysis]
+    #v(0.03in)
+    #grid(columns: (1fr, 1fr), column-gutter: 0.10in, row-gutter: 0.07in,
+      [#image("figures/original-assets/crops/picture-21.png", width: 100%)],
+      [#image("figures/original-assets/crops/picture-24.png", width: 100%)],
+      [#image("figures/original-assets/crops/picture-21.png", width: 100%)],
+      [#image("figures/original-assets/crops/picture-24.png", width: 100%)],
+    )
 
-- Participants, samples, simulations, or observations were selected using transparent criteria.
-- The main exposure or grouping variable was measured before the outcome.
-- Outcomes were summarized with graphical and model-based comparisons.
+    #v(0.07in)
+    #sec[Discussion]
+    #para[
+      Prior vaccination had modest effects on subsequent immune responses, both before and after adjusting for potential confounders.
+      #list(
+        [Prior FM vaccine was associated with higher post-titers and fold-change compared to other groups.],
+        [Participants previously vaccinated with FB showed poorer fold-change across vaccine sequences.],
+      )
+      Fold-change and post-vaccination titer capture different aspects of immunity, and patterns were not always consistent across these metrics. Models that control for baseline titers are therefore important.
+      #list(
+        [FM–FZSD sequence showed a large fold-change, but had low baseline titers.],
+        [FB–FB sequence showed a small boost but high post-titers.],
+      )
+      Responses varied by homologous vaccination history.
+      #list(
+        [FB–FB sequences show lower fold-change compared to other vaccination groups.],
+        [FV–FV was comparable to FZSD–FV, while FZSD–FZSD responded better than FV–FZSD.],
+      )
+    ]
 
-Table 1 gives a compact example of the kind of summary table that often belongs on a poster.
-
-| Characteristic | Group A | Group B | Group C |
-|---|---:|---:|---:|
-| Observations | 240 | 180 | 95 |
-| Median age | 42 | 45 | 41 |
-| Outcome available | 231 | 172 | 90 |
-| Included in model | 225 | 168 | 88 |
-
-: Example baseline or sample-size table. Replace with a project-specific table. {#tbl-summary}
-
-## Analysis plan
-
-Summarize the primary analysis in a few direct statements.
-
-- Compare outcome distributions across groups.
-- Estimate adjusted effects with a regression or mechanistic model.
-- Report uncertainty intervals rather than only point estimates.
-- Check whether conclusions are robust to important assumptions.
-
-# Results
-
-## Descriptive results
-
-![Example faceted scatter/summary figure. Replace with the main descriptive result from your project.](figures/example-results.svg){width="100%"}
-
-The first result figure should be easy to understand from a distance. Use direct axis labels, a short caption, and visual emphasis on the most important comparison.
-
-## Model-based results
-
-![Example coefficient plot with uncertainty intervals. Replace with the main adjusted analysis or model comparison.](figures/example-model-estimates.svg){width="100%"}
-
-A coefficient plot or uncertainty plot often communicates model results more clearly than a dense table. Clearly mark the null value when relevant.
-
-# Discussion
-
-The main result should be stated plainly. For example: **Group B showed a larger response than Group A after adjustment, while Group C remained uncertain because of smaller sample size.**
-
-- State what changed after adjustment for confounders or baseline differences.
-- Mention whether different outcome definitions agree or disagree.
-- Identify the most important limitation without overwhelming the reader.
-
-# Conclusions
-
-- Lead with the one finding you want readers to remember.
-- Explain why the finding matters for science, practice, or future work.
-- Name the next analysis, experiment, or validation step.
-
-::: {.block fill="rgb(245, 245, 245)" inset="10pt" radius="4pt"}
-
-**Take-home message:** Replace this callout with a single-sentence conclusion that a reader can remember after leaving the poster.
-
-:::
-
-# References and contact
-
-1. Author A, Author B. Example paper title. *Journal Name*. 2024.
-2. Author C, Author D. Example method or dataset citation. *Journal Name*. 2025.
-
-![QR-code placeholder. Replace with a QR code to the paper, repository, preprint, or contact page.](figures/qr-placeholder.svg){width="28%"}
-
-More information: <https://example.org/poster>
+    #v(0.05in)
+    #sec[References]
+    #small[
+      [1] B. J. Cowling et al., “Comparative Immunogenicity of Several Enhanced Influenza Vaccine Options for Older Adults,” Clin Infect Dis, 2020.\
+      [2] S. Gouma et al., “Comparison of Human H3N2 Antibody Responses Elicited by Egg-Based, Cell-Based, and Recombinant Protein–Based Influenza Vaccines,” Clin Infect Dis, 2019.\
+      [3] S. Zhong et al., “Influenza A(H3N2) Antibody Responses to Standard-Dose Versus Enhanced Influenza Vaccine Immunogenicity,” J Infect Dis, 2024.\
+      [4] D. F. Hoft et al., “Comparisons of the Humoral and Cellular Immune Responses Induced by Live Attenuated and Inactivated Influenza Vaccine,” CVI, 2017.\
+      [5] M.-H. Sung et al., “Assessment of Humoral Immune Responses to Repeated Influenza Vaccination in a Multiyear Cohort,” J Infect Dis, 2024.\
+      [6] B. J. Cowling et al., “Dynamics of the Immune Responses to Repeat Influenza Vaccination Exposures,” Clin Infect Dis, 2024.\
+      [7] S. Khurana et al., “Repeat vaccination reduces antibody affinity maturation across different influenza vaccine platforms in humans,” Nat Commun, 2019.
+    ]
+  ],
+)
+```

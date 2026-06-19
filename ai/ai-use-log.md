@@ -16,4 +16,4 @@ AI assistance revised the default poster layout to use a full-width banner-style
 
 ## 2026-06-18 — Simplified to one starter poster
 
-AI assistance replaced the separate `template.qmd` plus `examples/` layout with a single root-level `starter-poster.qmd`, enriched the starter poster with generic sections, example table, study-flow graphic, descriptive result figure, and coefficient plot inspired by an existing scientific poster layout, and updated documentation accordingly.
+AI assistance replaced the separate `template.qmd` plus `examples/` layout with a single root-level `starter-poster.qmd`, then revised the starter poster again to closely recreate the John immune priming poster layout and content at `john-immune-priming-project/products/poster`. The starter now uses the original-style UGA header, red section bars, three main content regions, original extracted/cropped figure assets, introduction/methods/discussion/reference text, and no auto-generated poster filename.

@@ -22,6 +22,9 @@
   // or Course Name, Date, Instructor.
   footer_text: "Footer Text",
 
+  // Whether to draw the footer bar.
+  show_footer: "true",
+
   // Any URL, like a link to the conference website.
   footer_url: "Footer URL",
 
@@ -33,6 +36,9 @@
 
   // Header text color.
   header_text_color: "111111",
+
+  // Whether to draw the built-in header. Set false for fully custom Typst layouts.
+  show_header: "true",
 
   // Font size of the poster body text, in pt.
   body_font_size: "24",
@@ -75,8 +81,8 @@
   body
 ) = {
   let sizes = size.split("x")
-  let width = int(sizes.at(0)) * 1in
-  let height = int(sizes.at(1)) * 1in
+  let width = float(sizes.at(0)) * 1in
+  let height = float(sizes.at(1)) * 1in
 
   body_font_size = int(body_font_size) * 1pt
   title_font_size = int(title_font_size) * 1pt
@@ -85,6 +91,8 @@
   footer_url_font_size = int(footer_url_font_size) * 1pt
   footer_text_font_size = int(footer_text_font_size) * 1pt
   let header_text_fill = rgb(header_text_color)
+  show_header = show_header == "true"
+  show_footer = show_footer == "true"
   num_columns = int(num_columns)
   title_row_size = float(title_row_size) * 1in
   margin_top = float(margin_top) * 1in
@@ -103,7 +111,7 @@
     height: height,
     margin: (top: margin_top, left: margin_left, right: margin_right, bottom: margin_bottom),
     background: align(center + top, banner(100%)),
-    footer: [
+    footer: if show_footer [
       #set align(center)
       #set text(fill: white)
       #block(
@@ -119,7 +127,7 @@
           #text(font: "Courier", size: footer_url_font_size, footer_email_ids)
         ]
       )
-    ]
+    ] else { none }
   )
 
   // Configure equation numbering and spacing.
@@ -158,22 +166,27 @@
   }
 
   // Header text over the banner.
-  align(center + top,
-    block(width: 100%, height: title_row_size)[
-      #set align(center)
-      #v(0.35in)
-      #par(leading: 0.62em, text(title_font_size, header_text_fill, title, weight: 700))
-      #v(0.22in)
-      #text(authors_font_size, header_text_fill, authors, weight: 600)
-      #v(0.14in)
-      #text(department_font_size, header_text_fill, departments)
-    ]
-  )
+  if show_header {
+    align(center + top,
+      block(width: 100%, height: title_row_size)[
+        #set align(center)
+        #v(0.35in)
+        #par(leading: 0.62em, text(title_font_size, header_text_fill, title, weight: 700))
+        #v(0.22in)
+        #text(authors_font_size, header_text_fill, authors, weight: 600)
+        #v(0.14in)
+        #text(department_font_size, header_text_fill, departments)
+      ]
+    )
 
-  v(space_after_header)
+    v(space_after_header)
+  }
 
-  // Start column mode and configure paragraph properties.
-  show: columns.with(num_columns, gutter: 0.7in)
+  // Start column mode and configure paragraph properties. Set num_columns to 1
+  // when the poster body provides its own explicit Typst grid/layout.
+  if num_columns > 1 {
+    show: columns.with(num_columns, gutter: 0.7in)
+  }
   set par(justify: true, first-line-indent: 0em, spacing: 0.65em)
 
   // Display the keywords.

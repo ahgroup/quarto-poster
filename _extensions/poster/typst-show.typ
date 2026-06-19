@@ -29,6 +29,9 @@
   // or Course Name, Date, Instructor.
   $if(footer-text)$ footer_text: [$footer-text$], $endif$
 
+  // Whether to draw the footer bar.
+  $if(show-footer)$ show_footer: "$show-footer$", $endif$
+
   // Any URL, like a link to the conference website.
   $if(footer-url)$ footer_url: [$footer-url$], $endif$
 
@@ -40,6 +43,9 @@
 
   // Header text color.
   $if(header-text-color)$ header_text_color: "$header-text-color$", $endif$
+
+  // Whether to draw the built-in header.
+  $if(show-header)$ show_header: "$show-header$", $endif$
 
   // DEFAULTS
   // ========
